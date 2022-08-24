@@ -4,7 +4,7 @@ Repositório para publicação das resoluções dos exercícios de Laboratório 
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno
+* Gabriel Victor Teles Cordeiro Damião
 
 ## Professor responsável
 
