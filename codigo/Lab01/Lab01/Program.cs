@@ -10,33 +10,39 @@ namespace Lab01
     {
         static void Main(string[] args)
         {
-            Console.Write("Escolha a atividade: ");
-            int op = int.Parse(Console.ReadLine());
-            switch (op)
+            bool continuar;
+            do
             {
-                case 1:
-                    Atv1();
-                    break;
-                case 2:
-                    Atv2();
-                    break;
-                case 3:
-                    Atv3();
-                    break;
-                case 4:
-                    Atv4();
-                    break;
-                case 5:
-                    Atv5();
-                    break;
-                case 6:
-                    Atv6();
-                    break;
-                default:
-                    Console.WriteLine("Opção Inválida");
-                    break;
-            }
-            Console.ReadKey();
+                Console.Write("Escolha a atividade: ");
+                int op = int.Parse(Console.ReadLine());
+                switch (op)
+                {
+                    case 1:
+                        Atv1();
+                        break;
+                    case 2:
+                        Atv2();
+                        break;
+                    case 3:
+                        Atv3();
+                        break;
+                    case 4:
+                        Atv4();
+                        break;
+                    case 5:
+                        Atv5();
+                        break;
+                    case 6:
+                        Atv6();
+                        break;
+                    default:
+                        Console.WriteLine("Opção Inválida");
+                        break;
+                }
+                Console.WriteLine("\nDeseja continuar? S/N");
+                string resp = Console.ReadLine();
+                continuar = resp == "S" || resp == "s" ? true : false;
+            } while (continuar);
         }
         static void Atv1()
         {
@@ -75,19 +81,21 @@ namespace Lab01
                         Console.WriteLine("Não é primo");
                     break;
                 case 2:
-                    Console.Write("Digite um número: ");
-                    int numP = int.Parse(Console.ReadLine());
-                    int soma = 0;
 
-                    for (int i = 1; i < numP; i++)
+                    int soma = 0;
+                    for (int j = 1; j <= 1000; j++)
                     {
-                        if (numP % i == 0)
-                            soma+= i;
+                        for (int i = 1; i < j; i++)
+                        {
+                            if (j % i == 0)
+                                soma += i;
+                        }
+                        if (j == soma)
+                        {
+                            Console.WriteLine(j+" é perfeito");                       
+                        }
+                        soma = 0;
                     }
-                    if (numP == soma)
-                        Console.WriteLine("É perfeito");
-                    else
-                        Console.WriteLine("Não é perfeito");
                     break;
                 default:
                     Console.WriteLine("Opção Inválida");
@@ -132,7 +140,7 @@ namespace Lab01
                 Console.Write(aux + " ");
             }
             Array.Resize(ref d, indexD);
-            Console.Write("Vetor D: ");
+            Console.Write("\nVetor D: ");
             foreach (int aux in d)
             {
                 Console.Write(aux + " ");
@@ -142,16 +150,16 @@ namespace Lab01
         {
             int[,] mat = new int[5, 3]
             {
-        {1, 2, 3},
-        {4, 5, 6},
-        {5, 6, 7},
-        {6, 7, 8},
-        {7, 8, 9},
+                {1, 2, 3},
+                {4, 5, 6},
+                {5, 6, 7},
+                {6, 7, 8},
+                {7, 8, 9},
             };
             int result = 0;
             for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     result += mat[i, j];
                 }
