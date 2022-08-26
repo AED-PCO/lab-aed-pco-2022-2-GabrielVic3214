@@ -1,0 +1,7 @@
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\bin\Debug\Lab02.exe.config
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\bin\Debug\Lab02.exe
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\bin\Debug\Lab02.pdb
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\obj\Debug\Lab02.csproj.AssemblyReference.cache
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\obj\Debug\Lab02.csproj.CoreCompileInputs.cache
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\obj\Debug\Lab02.exe
+D:\PUC\Laboratório\2 - Semestre\lab-aed-pco-2022-2-GabrielVic3214\codigo\Lab02\Lab02\obj\Debug\Lab02.pdb
