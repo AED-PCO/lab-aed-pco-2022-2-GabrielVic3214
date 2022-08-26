@@ -1,4 +1,4 @@
-Ao executar o programa deve ser digitada uma opção de 1 a 6, que são referentes as atividades propostas
+#Ao executar o programa deve ser digitada uma opção de 1 a 6, que são referentes as atividades propostas
 
 ### 1 - Escreva um método recursivo que retorne o fatorial de um número.
 <img src="Lab02Print/atv1.png"/>
