@@ -40,5 +40,49 @@ namespace Lab02_Ordenacao
             
             return pesquisaBinariaSemPos(vetor, inicio, final, pesquisa);
         }
+        
+        
+        static int pesquisaBinariaSemPos(int[] vetor, int inicio, int final, int pesquisa)
+        {
+            int meio = (int)(final - inicio) / 2;
+
+            if (vetor[meio] == pesquisa)
+            {
+                Console.WriteLine("Exite no vetor");
+                return 0;
+            }
+
+
+            if (vetor[meio] > pesquisa)
+                final = --meio;
+            else 
+                inicio = ++meio;
+
+
+            if (inicio == meio && vetor[inicio] > pesquisa || final == meio && vetor[final] < pesquisa)
+            {
+                Console.WriteLine("Não exite no vetor");
+                return 0;
+            }
+            return pesquisaBinariaSemPos(vetor, inicio, final, pesquisa);
+        }
+        static int pesquisaBinariaComPos(int[] vetor, int pos, int pesquisa)
+        {
+            if (vetor[pos] == pesquisa)
+            {
+                Console.WriteLine("Exite no vetor");
+                return 0;
+            }
+            else if(pos <= 0 || pos >= vetor.Length)
+            {
+                Console.WriteLine("Não exite no vetor");
+                return 0;
+            }
+            if (vetor[pos] > pesquisa)
+                pos++;
+            else
+                pos--;
+            return pesquisaBinariaComPos(vetor, pos, pesquisa);
+        }
     }
 }
