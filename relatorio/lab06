@@ -1,0 +1,95 @@
+Console.Write("Escolha a atividade: ");
+int op = int.Parse(Console.ReadLine());
+int[] array = new int[6] { 23, 16, 4, 42, 8, 15 };
+switch (op)
+{
+    case 1:
+        Console.WriteLine("Bubblesort");
+        Bubblesort(array);
+        break;
+    case 2:
+        Console.WriteLine("Seleção");
+        Selecao(array);
+        break;
+    case 3:
+        Console.WriteLine("Inserção");
+        Insercao(array);
+        break;
+    case 4:
+        Console.WriteLine("Mergesort");
+        break;
+    case 5:
+        Console.WriteLine("Shellsort");
+        break;
+    case 6:
+        Console.WriteLine("Quicksort");
+        break;
+    case 7:
+        Console.WriteLine("Ordenação por Contagem");
+        break;
+    default:
+        break;
+}
+static void LerVetor(int[] vetor)
+{
+    String text = "";
+    foreach(int v in vetor)
+    {
+        text += v+",";
+    }
+    text = text.Substring(0, text.Length - 1);
+    Console.WriteLine(text);
+}
+static void Bubblesort(int[] vetor)
+{
+    for(int i = vetor.Length-1; i > 0; i--)
+    {
+        for (int j = 0; j < vetor.Length; j++)
+        {
+            if (j + 1 <= vetor.Length - 1)
+            {
+                if (vetor[j] > vetor[j + 1])
+                {
+                    int aux = vetor[j + 1];
+                    vetor[j + 1] = vetor[j];
+                    vetor[j] = aux;
+                }
+            }
+        }
+    }
+    LerVetor(vetor);
+}
+static void Selecao(int[] vetor)
+{
+    for (int i = 0; i < vetor.Length; i++)
+    {
+        int menor = i;
+        for (int j = i+1; j < vetor.Length; j++)
+        {
+            if(vetor[j] < vetor[menor])
+            {
+                menor = j;
+            }
+        }
+        int aux = vetor[i];
+        vetor[i] = vetor[menor];
+        vetor[menor] = aux;
+    }
+    LerVetor(vetor);
+}
+static void Insercao(int[] vetor)
+{
+    for (int i = 1; i < vetor.Length; i++)
+    {
+        for (int j = i - 1; j > 0; j--)
+        {
+            if(vetor[i] < vetor[j])
+            {
+                int aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+            }
+        }
+    }
+    LerVetor(vetor);
+}
