@@ -78,18 +78,45 @@ static void Selecao(int[] vetor)
     LerVetor(vetor);
 }
 static void Insercao(int[] vetor)
-{
-    for (int i = 1; i < vetor.Length; i++)
-    {
-        for (int j = i - 1; j > 0; j--)
         {
-            if(vetor[i] < vetor[j])
+            for (int i = 1; i < vetor.Length; i++)
             {
-                int aux = vetor[i];
-                vetor[i] = vetor[j];
-                vetor[j] = aux;
+                int menor = vetor[i];
+                int ultimaPos = 0;
+                for (int j = i - 1; j >= 0; j--)
+                {
+                    if (menor > vetor[j])
+                    {
+                        ultimaPos = ++j;
+                        break;
+                    }
+                    else if (vetor[j]< menor)
+                    {
+                        ultimaPos = ++j;
+                        break;
+                    }
+                    else
+                    {
+                        vetor[j + 1] = vetor[j];
+                    }
+                }
+                vetor[ultimaPos] = menor;
             }
+            LerVetor(vetor);
         }
-    }
-    LerVetor(vetor);
+        static void Shellsort(int[] vetor)
+        {
+            int hop = 4;
+            for(int i = hop; i < vetor.Length; i++)
+            {
+                for(int j = i-hop; j > 0; j -= hop)
+                {
+                    if (vetor[i] < vetor[j])
+                    {
+
+                    }
+                }
+            }
+            hop /= 2;
+        }
 }
