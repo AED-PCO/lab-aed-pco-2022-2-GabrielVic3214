@@ -11,6 +11,7 @@ namespace Lab06
             int[] array = new int[6] { 23, 16, 4, 42, 8, 15 };
             int[] arrayShell = new int[10] { 23, 15, 26, 42, 16, 8, 77, 4, 13, 93 };
             int[] arrayQuick = new int[8] { 23, 95, 8, 4, 15, 77, 16, 42 };
+            int[] arrayContagem = new int[10] { 3, 6, 1, 2, 3, 6, 4, 2, 3, 1 };
             switch (op)
             {
                 case 1:
@@ -38,6 +39,7 @@ namespace Lab06
                     break;
                 case 7:
                     Console.WriteLine("Ordenação por Contagem");
+                    OrdenacaoContagem(arrayContagem);
                     break;
                 default:
                     break;
@@ -149,6 +151,16 @@ namespace Lab06
             {
                 for (int i = 1; i < fim; i++)
                 {
+                    if(i == fim - 1)
+                    {
+                        part++;
+                        if (vetor[i] < vetor[part])
+                        {
+                            int aux = vetor[i];
+                            vetor[i] = vetor[part];
+                            vetor[part] = aux;
+                        }
+                    }
                     if (vetor[i] < vetor[fim - 1])
                     {
                         part++;
@@ -158,16 +170,26 @@ namespace Lab06
                     }
                 }
                 if (divPart < 0)
-                    divPart = ++part;
-                fim = (part - 1);
-                part = 0;
+                    divPart = part;
+                fim = part;
+                part = -1;
             }
             if(divPart> 0)
             {
-                part = ++divPart;
+                part = divPart;
                 fim = vetor.Length;
-                for (int i = part; i < fim; i++)
+                for (int i = part+1; i < fim; i++)
                 {
+                    if (i == fim - 1)
+                    {
+                        part++;
+                        if (vetor[i] < vetor[part])
+                        {
+                            int aux = vetor[i];
+                            vetor[i] = vetor[part];
+                            vetor[part] = aux;
+                        }
+                    }
                     if (vetor[i] < vetor[fim - 1])
                     {
                         part++;
@@ -176,6 +198,35 @@ namespace Lab06
                         vetor[part] = aux;
                     }
                 }
+            }
+            LerVetor(vetor);
+        }
+        static void OrdenacaoContagem(int[] vetor)
+        {
+            int[] valor = new int[6] { 1, 2, 3, 4, 5, 6 };
+            int[] contagem = new int[6];
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                for (int j = 0; j < valor.Length; j++)
+                {
+                    if (vetor[i] == valor[j])
+                    {
+                        contagem[j]++;
+                    }
+                }
+            }
+            LerVetor(contagem);
+            int auxContagem = 0;
+            for (int i = 0; i < vetor.Length;)
+            {
+                if (contagem[auxContagem] > 0)
+                {
+                    vetor[i] = valor[auxContagem];
+                    contagem[auxContagem]--;
+                    i++;
+                }
+                else
+                    auxContagem++;
             }
             LerVetor(vetor);
         }
