@@ -1,0 +1,102 @@
+namespace Lab07
+{
+    using System.Diagnostics;
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Escolha uma questão da prova: ");
+            int op = int.Parse(Console.ReadLine());
+            switch (op)
+            {
+                case 1:
+                    Atv1();
+                    break;
+                case 2:
+                    Atv2();
+                    break;
+                case 3:
+                    Atv3();
+                    break;
+                case 4:
+                    Atv4();
+                    break;
+                case 5:
+                    Atv5();
+                    break;
+                default:
+                    Console.WriteLine("Opção Inválida");
+                    break;
+            }
+        }
+        static void Atv1() 
+        {
+            Console.Write("Digite uma frase: ");
+            char[] frase = Console.ReadLine().ToCharArray();
+            char[] arquivo = System.IO.File.ReadAllText(@"C:\Users\1389156\Desktop\arq1.txt").ToCharArray();
+            int iguais = 0;
+            for(int i = 0; i< frase.Length; i++)
+            {
+                for (int j = 0; j < arquivo.Length; j++)
+                {
+                    if (frase[i].Equals(arquivo[j])){
+                        iguais++;
+                    }
+                }
+            }
+            int diferente = Math.Abs(arquivo.Length - iguais);
+            Console.WriteLine("Iguais: {0} \nDifrentes: {1}",iguais,diferente);
+        }
+        static void Atv2() 
+        {
+            var sw = new Stopwatch();
+            sw.Start();
+            int v = funcRec1(6,0);
+            sw.Stop();
+            Console.WriteLine("Tempo: {0}s\nValor: {1}", sw.ElapsedTicks.ToString(),v);
+        }
+        static int funcRec1(int a, int quant)
+        {
+            if(a <= 1 || quant >= 3002)
+            {
+                return 0;
+            }
+            else
+            {
+                return funcRec1((a - 2) + 5, ++quant);
+            }
+        }
+        static void Atv3() 
+        {
+            char[] entrada = System.IO.File.ReadAllText(@"C:\Users\1389156\Desktop\entrada.txt").ToCharArray();
+            char[] reverse = new char[entrada.Length];
+            int indexAux = 0;
+            for(int i = entrada.Length-1;i>= 0; i--)
+            {
+                reverse[indexAux++] = entrada[i];
+            }
+            StreamWriter sw = new StreamWriter(@"C:\Users\1389156\Desktop\saida.txt");
+            sw.WriteLine(new string(reverse));
+            sw.Close();
+        }
+        static void Atv4() { }
+        static void Atv5() 
+        {
+            int[] v = new int[7] { 10, 5, 7, 15, 22, 9, 30 };
+            Console.WriteLine("Retorno: " + funcao(6, v));
+        }
+        static int funcao(int a, int[] v)
+        {
+            if (a == 1)
+                return v[0];
+            else
+            {
+                int x = funcao(a - 1, v);
+                if (x > v[a - 1])
+                    return x;
+                else
+                    return v[a - 1];
+            }
+        }
+    }
+}
