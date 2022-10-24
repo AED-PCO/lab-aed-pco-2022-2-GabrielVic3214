@@ -1,7 +1,7 @@
 # Ao executar o programa deve ser digitada uma opção de 1 a 6, que são referentes as atividades propostas
 
 ### 1 - Um programa que le um arquivo e faz um calculo que mostra quantos termos iguais e diferentes existem
-<img src="Lab07Print/atv1.png"/>
+<img src="Lab07Print/atv1 pt1.png"/>
 
 ### 2 - Função recursiva funfRec1(6)
 <img src="Lab07Print/atv2.png"/>
