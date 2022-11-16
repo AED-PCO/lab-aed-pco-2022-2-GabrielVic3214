@@ -96,7 +96,63 @@ namespace Lab07
             swt.Stop();
             Console.WriteLine(swt.ElapsedMilliseconds.ToString() + " segundos");
         }
-        static void Atv4() { }
+        static void Atv4()
+        {
+            Console.Write("CPF: ");
+            int quant = 0;
+            while (quant < 5)
+            {
+                int[] cpf = GeradorCPF();
+                if (ValidarCPF(cpf))
+                {
+                    quant++;
+                    lerVetor(cpf);
+                }
+            }
+        }
+        static int[] GeradorCPF()
+        {
+            int[] cpf = new int[11];
+            Random r = new Random();
+            for (int i = 0; i < cpf.Length; i++)
+            {
+                cpf[i] = r.Next(1, 9);
+            }
+            return cpf;
+        }
+        static bool ValidarCPF(int[] cpf)
+        {
+            bool valido = false;
+            int j = 0, mult = 10;
+            for (int i = 0; i < cpf.Length - 2; i++)
+            {
+                j += cpf[i] * mult;
+                mult--;
+            }
+            int resto = j % 11;
+            if (resto == 0 || resto == 1)
+                j = 0;
+            else
+                j = 11 - resto;
+
+            int k = 0;
+            mult = 11;
+            for (int i = 0; i < cpf.Length - 1; i++)
+            {
+                k += cpf[i] * mult;
+                mult--;
+            }
+            resto = k % 11;
+            if (resto == 0 || resto == 1)
+                k = 0;
+            else
+                k = 11 - resto;
+
+            if (cpf[cpf.Length - 2] == j && cpf[cpf.Length - 1] == k)
+                valido = true;
+
+            return valido;
+        }
         static void Atv5()
         {
             var sw = new Stopwatch();
@@ -118,6 +174,14 @@ namespace Lab07
                 else
                     return v[a - 1];
             }
+        }
+        static void lerVetor(int[] vetor)
+        {
+            foreach (int v in vetor)
+            {
+                Console.Write(v);
+            }
+            Console.Write(" | ");
         }
     }
 }
