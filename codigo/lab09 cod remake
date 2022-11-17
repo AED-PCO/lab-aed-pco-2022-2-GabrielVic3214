@@ -1,0 +1,90 @@
+namespace lab07
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("1: Pilha para Pilha\n2: Fila para Reverse\n3: Fila para Fila+Reverse");
+            Console.Write("Escolha uma atividade: ");
+            int opAtv = int.Parse(Console.ReadLine());
+            switch (opAtv)
+            {
+                case 1:
+                    int[] pilha = new int[5];
+                    PreencherArray(ref pilha);
+                    LerVetor(pilha);
+                    pilha = Pilha(pilha,pilha.Length-1);
+                    LerVetor(pilha);
+                    pilha = Pilha(pilha,pilha.Length-1);
+                    LerVetor(pilha);
+                    break;
+                case 2:
+                    int[] fila = new int[5];
+                    PreencherArray(ref fila);
+                    LerVetor(fila);
+                    fila = Pilha(fila, fila.Length - 1);
+                    LerVetor(fila);
+                    break;
+                case 3:
+                    int[] lista = new int[5];
+                    PreencherArray(ref lista);
+                    LerVetor(lista);
+                    int refLista = lista.Length - 1;
+                    int[] filaReverse = Pilha(lista, refLista);
+                    Array.Resize(ref lista, lista.Length * 2);
+                    int aux = 0;
+                    for (int i = refLista+1; i < lista.Length; i++)
+                    {
+                        lista[i] = filaReverse[aux++];
+                    }
+                    LerVetor(lista);
+                    break;
+                default: Console.WriteLine("Opção inválida"); break;
+            }
+        }
+        static int[] Pilha(int[] vetor, int refPos)
+        {
+            int[] pilha = new int[vetor.Length];
+            for(int i = 0; i< pilha.Length; i++)
+            {
+                pilha[i] = vetor[refPos--];
+            }
+            return pilha;
+        }
+        static int[] Fila(int[] vetor, int refPos)
+        {
+            int[] fila = new int[vetor.Length];
+            for (int i = 0; i < fila.Length; i++)
+            {
+                fila[i] = vetor[refPos++];
+            }
+            return fila;
+        }
+        static int[] Lista(int[] vetor)
+        {
+            int[] lista = new int[vetor.Length];
+            for (int i = 0; i < lista.Length; i++)
+            {
+                lista[i] = vetor[i];
+            }
+            return lista;
+        }
+        static void PreencherArray(ref int[] a)
+        {
+            Random r = new Random();
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = r.Next(1, 20);
+            }
+        }
+        static void LerVetor(int[] vetor)
+        {
+            Console.Write("Vetor: ");
+            foreach (int v in vetor)
+            {
+                Console.Write(v + " ");
+            }
+            Console.Write("\n");
+        }
+    }
+}
