@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1389156\\Desktop\\Lab09\\Lab09\\Lab09.csproj": {}
+    "D:\\PUC\\Laboratório\\2 - Semestre\\lab-aed-pco-2022-2-GabrielVic3214\\codigo\\Lab09\\Lab09\\Lab09.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1389156\\Desktop\\Lab09\\Lab09\\Lab09.csproj": {
+    "D:\\PUC\\Laboratório\\2 - Semestre\\lab-aed-pco-2022-2-GabrielVic3214\\codigo\\Lab09\\Lab09\\Lab09.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1389156\\Desktop\\Lab09\\Lab09\\Lab09.csproj",
+        "projectUniqueName": "D:\\PUC\\Laboratório\\2 - Semestre\\lab-aed-pco-2022-2-GabrielVic3214\\codigo\\Lab09\\Lab09\\Lab09.csproj",
         "projectName": "Lab09",
-        "projectPath": "C:\\Users\\1389156\\Desktop\\Lab09\\Lab09\\Lab09.csproj",
-        "packagesPath": "C:\\Users\\1389156\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1389156\\Desktop\\Lab09\\Lab09\\obj\\",
+        "projectPath": "D:\\PUC\\Laboratório\\2 - Semestre\\lab-aed-pco-2022-2-GabrielVic3214\\codigo\\Lab09\\Lab09\\Lab09.csproj",
+        "packagesPath": "C:\\Users\\Himalaia\\.nuget\\packages\\",
+        "outputPath": "D:\\PUC\\Laboratório\\2 - Semestre\\lab-aed-pco-2022-2-GabrielVic3214\\codigo\\Lab09\\Lab09\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\1389156\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Himalaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,12 +49,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
         }
       }
     }
